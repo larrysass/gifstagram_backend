@@ -3,6 +3,11 @@ class UsersController < ApplicationController
         render json: current_user
     end
 
+    def show
+        gifs = current_user.gifs 
+        render json: gifs 
+    end
+
     def create 
         
         user = User.create(user_params)

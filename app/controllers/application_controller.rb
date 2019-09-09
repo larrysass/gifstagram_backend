@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
     def token 
-        request.header["Authorization"].split(" ")[1]
+        request.headers["Authorization"].split(" ")[1]
     end
 
     def secret 

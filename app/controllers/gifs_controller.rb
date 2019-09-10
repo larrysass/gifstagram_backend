@@ -2,7 +2,7 @@ class GifsController < ApplicationController
 
     def index 
         gifs = Gif.all 
-        render json: gifs, include: [:likes]
+        render json: gifs, include: [:likes, :users, :comments]
     end
     
 
@@ -13,7 +13,7 @@ class GifsController < ApplicationController
     def show
         gif = Gif.find(params[:id])
         render json: {
-            id: gif.id, url: gif.url, likes: gif.likes
+            id: gif.id, url: gif.url, likes: gif.likes, comments: gif.comments
         }
     end
 

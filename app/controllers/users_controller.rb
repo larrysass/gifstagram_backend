@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
     def show
         gifs = current_user.gifs 
-        render json: gifs, include: [:likes]
+        render json: gifs, include: [:likes, :users, :comments]
     end
 
     def create 

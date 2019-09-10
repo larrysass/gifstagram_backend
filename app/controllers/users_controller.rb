@@ -1,11 +1,17 @@
 class UsersController < ApplicationController
+
+    def index
+        users = User.all 
+        render json: users 
+    end
+
     def profile 
         render json: current_user
     end
 
     def show
         gifs = current_user.gifs 
-        render json: gifs 
+        render json: gifs, include: [:likes]
     end
 
     def create 

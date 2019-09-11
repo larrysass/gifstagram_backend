@@ -6,7 +6,7 @@ class LikesController < ApplicationController
 
     private
 
-    def gif_params
+    def like_params
         params.require(:like).permit(:user_id, :gif_id)
     end
 end

@@ -11,12 +11,18 @@ class CommentsController < ApplicationController
 
     def show
         comment = Comment.find(params[:id])
-        render json: { id: comment.id, user: comment.user, gif: comment.gif, content: comment.content }
+        render json: comment
+    end
+
+    def destroy
+        comment = Comment.find(params[:id])
+        comment.destroy
+        render json: {}
     end
 
     private
 
     def comment_params
-        params.require(:comment).permit(:user_id, :gif_id, :content)
+        params.require(:comment).permit(:user_id, :gif_id, :content, :author)
     end
 end

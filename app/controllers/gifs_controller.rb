@@ -1,11 +1,19 @@
 class GifsController < ApplicationController
+
+    def index 
+        gifs = Gif.all 
+        render json: gifs, include: [:likes, :users, :comments]
+    end
+
     def new
         @gif = Gif.new
     end
 
-    def index
-        @gifs = Gif.all.map{|gif| {url: gif.url, id: gif.id, likes: gif.likes, users: gif.users}}
-        render json: @gifs
+    def show
+        gif = Gif.find(params[:id])
+        render json: {
+            id: gif.id, url: gif.url, likes: gif.likes, comments: gif.comments
+        }
     end
 
     def create

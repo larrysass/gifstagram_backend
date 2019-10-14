@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.string :content
       t.integer :gif_id
       t.integer :user_id
+      t.string :author
 
       t.timestamps
     end

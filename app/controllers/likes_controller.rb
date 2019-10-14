@@ -14,6 +14,12 @@ class LikesController < ApplicationController
         render json: { id: like.id, user: like.user, gif: like.gif }
     end
 
+    def destroy
+        like = Like.find(params[:id])
+        like.destroy
+        render json: {}
+    end
+
     private
 
     def like_params

@@ -11,9 +11,11 @@ class UsersController < ApplicationController
 
     def show
         user = User.find(params[:id])
-        gifs = user.likes.map{|like| like.gif} 
-        render json: gifs
-        # render json: gifs, include: [:likes, :users, :comments]
+        likes = user.likes
+        likedGifs = likes.map{|like| like.gif}
+        render json: {
+            id: user.id, username: user.username, likes: likedGifs
+        }
     end
 
     def create 

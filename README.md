@@ -1,24 +1,10 @@
-# README
+# Gifstagram Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend repo for Gifstagram, a project by me and [Daniel Voigt](https://github.com/TeenageGrampa). Its a social media platform for discovering and sharing GIFs, powered by the GIPHY API.
 
-Things you may want to cover:
+[Click here for the frontend repo](https://github.com/larrysass/gifstagram_with_game)
 
-* Ruby version
+It was built using Ruby on Rails. 
 
-* System dependencies
+[Click here for the deployed demo](http://gifstagram-new.surge.sh/) 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
